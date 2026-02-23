@@ -1,72 +1,84 @@
-# PalindromeCheckerApp
-
-// running procedure
-// flow of project
-// objective
-// topics covered
-// which use cases
-// working of use case 2
-
-------------------------------------------------------------
-
-PROJECT: PalindromeCheckerApp
+============================================================
+PalindromeCheckerApp
+============================================================
 
 OBJECTIVE:
-To demonstrate basic palindrome validation logic in Java
-using a hardcoded string value.
+To validate whether a given string is a palindrome using
+a reverse-based transformation approach, while reinforcing
+core Java programming fundamentals.
 
 ------------------------------------------------------------
 
-RUNNING PROCEDURE:
+USE CASE 3:
+Palindrome Check Using String Reverse
 
-1. Compile the program:
-   javac UseCase2PalindromeCheckerApp.java
-
-2. Run the program:
-   java UseCase2PalindromeCheckerApp
+GOAL:
+Check whether a string is a palindrome by reversing it
+and comparing it with the original value.
 
 ------------------------------------------------------------
 
-FLOW OF PROJECT:
+IMPLEMENTATION APPROACH:
+
+- Store a predefined string.
+- Iterate from the last character to the first.
+- Build a reversed string using concatenation.
+- Compare original and reversed strings using equals().
+- Display the validation result.
+
+------------------------------------------------------------
+
+FLOW OF EXECUTION:
 
 Program starts
 → Hardcoded string is stored
-→ Characters are compared from both ends
-→ Palindrome condition is evaluated
-→ Result is displayed on console
+→ Loop iterates in reverse order
+→ Reversed string is constructed
+→ Original and reversed strings are compared
+→ Result is printed on console
 → Program exits
 
 ------------------------------------------------------------
 
-TOPICS COVERED:
+KEY CONCEPTS USED:
 
-- Class and main method structure
-- Static keyword usage
-- String handling in Java
-- String length() and charAt() methods
-- Conditional statements (if-else)
-- Loop control (for loop)
-- Boolean flag logic
-- Time and space complexity basics
+1. for Loop  
+   Iterates from last index to first index.
+
+2. String Immutability  
+   Strings cannot be modified after creation.
+   Each concatenation creates a new object.
+
+3. String Concatenation (+)  
+   Used to construct reversed string character by character.
+
+4. equals() Method  
+   Compares actual content of String objects.
+
+5. Boolean Flag Logic  
+   Stores palindrome validation result.
+
+------------------------------------------------------------
+
+TIME & SPACE COMPLEXITY:
+
+Time Complexity: O(n²)  
+(due to repeated string concatenation)
+
+Space Complexity: O(n)  
+(extra memory for reversed string)
 
 ------------------------------------------------------------
 
-WHICH USE CASES:
+COMPILATION & EXECUTION:
 
-Use Case 1: Basic Structure Demonstration  
-Use Case 2: Hardcoded Palindrome Validation
+Since the same project is being used:
 
-------------------------------------------------------------
-
-WORKING OF USE CASE 2:
-
-- A predefined string is stored.
-- Loop runs only until half of the string length.
-- Characters at symmetric positions are compared.
-- If mismatch occurs, boolean flag becomes false.
-- Final result is printed.
-
-Time Complexity: O(n)  
-Space Complexity: O(1)
+javac UseCase3PalindromeCheckerApp.java
+java UseCase3PalindromeCheckerApp
 
 ------------------------------------------------------------
+
+VERSION:
+UC3 – Transformation-Based Palindrome Validation
+Version 3.0
