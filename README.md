@@ -2,29 +2,34 @@
 PalindromeCheckerApp
 ============================================================
 
+USE CASE 4:
+Character Array Based Palindrome Check
+
 OBJECTIVE:
-To validate whether a given string is a palindrome using
-a reverse-based transformation approach, while reinforcing
-core Java programming fundamentals.
+To validate whether a given string is a palindrome by
+converting the string into a character array and
+applying the two-pointer comparison technique.
 
 ------------------------------------------------------------
 
-USE CASE 3:
-Palindrome Check Using String Reverse
-
 GOAL:
-Check whether a string is a palindrome by reversing it
-and comparing it with the original value.
+Convert string to char[]
+Use two-pointer approach
+Compare start and end characters
 
 ------------------------------------------------------------
 
 IMPLEMENTATION APPROACH:
 
-- Store a predefined string.
-- Iterate from the last character to the first.
-- Build a reversed string using concatenation.
-- Compare original and reversed strings using equals().
-- Display the validation result.
+- Store predefined string.
+- Convert string to character array using toCharArray().
+- Initialize two pointers:
+  start → beginning of array
+  end   → last index of array
+- Compare characters at start and end.
+- Move pointers inward after each comparison.
+- Stop early if mismatch occurs.
+- Display validation result.
 
 ------------------------------------------------------------
 
@@ -32,53 +37,49 @@ FLOW OF EXECUTION:
 
 Program starts
 → Hardcoded string is stored
-→ Loop iterates in reverse order
-→ Reversed string is constructed
-→ Original and reversed strings are compared
-→ Result is printed on console
+→ String converted to char[]
+→ Start and end pointers initialized
+→ Characters compared using while loop
+→ Boolean result determined
+→ Output displayed
 → Program exits
 
 ------------------------------------------------------------
 
 KEY CONCEPTS USED:
 
-1. for Loop  
-   Iterates from last index to first index.
+1. Character Array (char[])
+   Primitive array storing individual characters.
 
-2. String Immutability  
-   Strings cannot be modified after creation.
-   Each concatenation creates a new object.
+2. Array Indexing
+   Access elements using index positions (0 to n-1).
 
-3. String Concatenation (+)  
-   Used to construct reversed string character by character.
+3. Two-Pointer Technique
+   One pointer from beginning and one from end.
+   Reduces unnecessary comparisons.
 
-4. equals() Method  
-   Compares actual content of String objects.
+4. Efficient Early Termination
+   Loop breaks immediately on mismatch.
 
-5. Boolean Flag Logic  
-   Stores palindrome validation result.
+5. Time Complexity Awareness
+   Avoids repeated object creation.
 
 ------------------------------------------------------------
 
 TIME & SPACE COMPLEXITY:
 
-Time Complexity: O(n²)  
-(due to repeated string concatenation)
-
-Space Complexity: O(n)  
-(extra memory for reversed string)
+Time Complexity: O(n)
+Space Complexity: O(n)  (due to char array creation)
 
 ------------------------------------------------------------
 
 COMPILATION & EXECUTION:
 
-Since the same project is being used:
-
-javac UseCase3PalindromeCheckerApp.java
-java UseCase3PalindromeCheckerApp
+javac PalindromeCheckerApp.java
+java PalindromeCheckerApp
 
 ------------------------------------------------------------
 
 VERSION:
-UC3 – Transformation-Based Palindrome Validation
-Version 3.0
+UC4 – Character Array Based Validation
+Version 4.0
