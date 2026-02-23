@@ -2,34 +2,33 @@
 PalindromeCheckerApp
 ============================================================
 
-USE CASE 4:
-Character Array Based Palindrome Check
+USE CASE 5:
+Stack-Based Palindrome Checker
 
 OBJECTIVE:
 To validate whether a given string is a palindrome by
-converting the string into a character array and
-applying the two-pointer comparison technique.
+using a Stack data structure to reverse characters
+based on LIFO (Last In First Out) principle.
 
 ------------------------------------------------------------
 
 GOAL:
-Convert string to char[]
-Use two-pointer approach
-Compare start and end characters
+Push characters into stack
+Pop characters in reverse order
+Compare with original string
+Print validation result
 
 ------------------------------------------------------------
 
 IMPLEMENTATION APPROACH:
 
 - Store predefined string.
-- Convert string to character array using toCharArray().
-- Initialize two pointers:
-  start → beginning of array
-  end   → last index of array
-- Compare characters at start and end.
-- Move pointers inward after each comparison.
-- Stop early if mismatch occurs.
-- Display validation result.
+- Create a Stack<Character> object.
+- Push each character of the string into the stack.
+- Pop characters one by one.
+- Compare popped character with original string.
+- Stop immediately if mismatch occurs.
+- Display final result.
 
 ------------------------------------------------------------
 
@@ -37,9 +36,10 @@ FLOW OF EXECUTION:
 
 Program starts
 → Hardcoded string is stored
-→ String converted to char[]
-→ Start and end pointers initialized
-→ Characters compared using while loop
+→ Stack is created
+→ Characters pushed into stack
+→ Characters popped in reverse order
+→ Compared with original string
 → Boolean result determined
 → Output displayed
 → Program exits
@@ -48,28 +48,27 @@ Program starts
 
 KEY CONCEPTS USED:
 
-1. Character Array (char[])
-   Primitive array storing individual characters.
+1. Stack (java.util.Stack)
+   Linear data structure following LIFO principle.
 
-2. Array Indexing
-   Access elements using index positions (0 to n-1).
+2. Push Operation
+   Adds elements to the top of the stack.
 
-3. Two-Pointer Technique
-   One pointer from beginning and one from end.
-   Reduces unnecessary comparisons.
+3. Pop Operation
+   Removes elements from the top (reverse order retrieval).
 
-4. Efficient Early Termination
-   Loop breaks immediately on mismatch.
+4. Reversal Logic
+   Stack automatically reverses insertion order.
 
-5. Time Complexity Awareness
-   Avoids repeated object creation.
+5. Data Structure Utilization
+   Demonstrates structured approach instead of index-based logic.
 
 ------------------------------------------------------------
 
 TIME & SPACE COMPLEXITY:
 
 Time Complexity: O(n)
-Space Complexity: O(n)  (due to char array creation)
+Space Complexity: O(n)  (extra stack storage)
 
 ------------------------------------------------------------
 
@@ -81,5 +80,5 @@ java PalindromeCheckerApp
 ------------------------------------------------------------
 
 VERSION:
-UC4 – Character Array Based Validation
-Version 4.0
+UC5 – Stack-Based Validation
+Version 5.0
