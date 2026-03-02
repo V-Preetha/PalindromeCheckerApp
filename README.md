@@ -1,52 +1,53 @@
 ============================================================
 PalindromeCheckerApp
-USE CASE 6: Queue + Stack Based Palindrome Checker
+USE CASE 8: Linked List Based Palindrome Checker
 ============================================================
 
 OBJECTIVE:
-To validate whether a given string is a palindrome using both
-Queue and Stack data structures demonstrating FIFO and LIFO behavior.
+To validate whether a given string is a palindrome using a
+LinkedList data structure by comparing elements from both ends.
 
 GOAL:
-Enqueue characters into Queue  
-Push characters into Stack  
-Compare dequeue and pop results  
-Print palindrome validation result  
+Insert characters into LinkedList  
+Remove first and last elements  
+Compare both characters  
+Print palindrome validation result
 
 IMPLEMENTATION APPROACH:
 
 Store predefined input string.
-Create Queue and Stack objects.
-Insert each character into both structures.
-Remove characters using dequeue (Queue).
-Remove characters using pop (Stack).
-Compare both outputs simultaneously.
+Create a LinkedList object.
+Insert each character into the list.
+Remove characters using removeFirst().
+Remove characters using removeLast().
+Compare both characters simultaneously.
 Stop execution if mismatch occurs.
 Display final palindrome result.
 
 FLOW OF EXECUTION:
 
-Program starts → Input string stored → Queue & Stack created →
-Characters inserted → Queue dequeues from front →
-Stack pops from rear → Characters compared →
-Boolean result determined → Output displayed → Program exits
+Program starts → Input string stored → LinkedList created →
+Characters inserted → First and last elements removed →
+Characters compared → Boolean result determined →
+Output displayed → Program exits
 
 KEY CONCEPTS USED:
 
-Queue (java.util.Queue / LinkedList)
-Linear data structure following FIFO principle.
+LinkedList (java.util.LinkedList)
+Dynamic linear data structure supporting efficient
+insertion and deletion operations.
 
-Stack (java.util.Stack)
-Linear data structure following LIFO principle.
+removeFirst() Operation
+Retrieves element from the beginning of the list.
 
-Enqueue & Dequeue Operations
-Maintain insertion-order processing.
+removeLast() Operation
+Retrieves element from the end of the list.
 
-Push & Pop Operations
-Provide reverse-order retrieval.
+Bidirectional Comparison
+Allows symmetric palindrome validation.
 
-Symmetric Comparison
-Combines FIFO and LIFO behaviors for palindrome validation.
+Data Structure Utilization
+Demonstrates double-ended operations using LinkedList.
 
 TIME & SPACE COMPLEXITY:
 
@@ -55,8 +56,8 @@ Space Complexity: O(n)
 
 COMPILATION & EXECUTION:
 
-javac PalindromeCheckerApp.java
-java PalindromeCheckerApp
+javac UseCase8PalindromeCheckerApp.java
+java UseCase8PalindromeCheckerApp
 
 VERSION:
-UC6 – Queue + Stack Validation Version 6.0
+UC8 – LinkedList-Based Validation Version 8.0
