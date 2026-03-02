@@ -1,54 +1,52 @@
-================================
+============================================================
 PalindromeCheckerApp
-USE CASE 7: Deque-Based Optimized Palindrome Checker
+USE CASE 6: Queue + Stack Based Palindrome Checker
 ============================================================
 
 OBJECTIVE:
-To validate whether a given string is a palindrome using a
-Deque (Double Ended Queue) by comparing characters from
-both front and rear ends efficiently.
+To validate whether a given string is a palindrome using both
+Queue and Stack data structures demonstrating FIFO and LIFO behavior.
 
 GOAL:
-Insert characters into Deque  
-Remove first and last elements  
-Compare both characters  
+Enqueue characters into Queue  
+Push characters into Stack  
+Compare dequeue and pop results  
 Print palindrome validation result  
 
 IMPLEMENTATION APPROACH:
 
 Store predefined input string.
-Create a Deque object.
-Insert each character into the deque.
-Remove characters using removeFirst().
-Remove characters using removeLast().
-Compare both characters simultaneously.
+Create Queue and Stack objects.
+Insert each character into both structures.
+Remove characters using dequeue (Queue).
+Remove characters using pop (Stack).
+Compare both outputs simultaneously.
 Stop execution if mismatch occurs.
 Display final palindrome result.
 
 FLOW OF EXECUTION:
 
-Program starts → Input string stored → Deque created →
-Characters inserted → Front and rear elements removed →
-Characters compared → Boolean result determined →
-Output displayed → Program exits
+Program starts → Input string stored → Queue & Stack created →
+Characters inserted → Queue dequeues from front →
+Stack pops from rear → Characters compared →
+Boolean result determined → Output displayed → Program exits
 
 KEY CONCEPTS USED:
 
-Deque (java.util.Deque / ArrayDeque)
-Linear data structure allowing insertion and deletion
-from both ends.
+Queue (java.util.Queue / LinkedList)
+Linear data structure following FIFO principle.
 
-removeFirst() Operation
-Retrieves element from the front.
+Stack (java.util.Stack)
+Linear data structure following LIFO principle.
 
-removeLast() Operation
-Retrieves element from the rear.
+Enqueue & Dequeue Operations
+Maintain insertion-order processing.
 
-Bidirectional Traversal
-Enables optimized front-to-back comparison.
+Push & Pop Operations
+Provide reverse-order retrieval.
 
-Optimized Palindrome Logic
-Eliminates need for separate Stack or Queue structures.
+Symmetric Comparison
+Combines FIFO and LIFO behaviors for palindrome validation.
 
 TIME & SPACE COMPLEXITY:
 
@@ -57,8 +55,8 @@ Space Complexity: O(n)
 
 COMPILATION & EXECUTION:
 
-javac UseCase7PalindromeCheckerApp.java
-java UseCase7PalindromeCheckerApp
+javac PalindromeCheckerApp.java
+java PalindromeCheckerApp
 
 VERSION:
-UC7 – Deque-Based Optimized Validation Version 7.0
+UC6 – Queue + Stack Validation Version 6.0
