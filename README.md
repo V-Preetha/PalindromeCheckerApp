@@ -50,8 +50,8 @@ Public method exposes validation behavior.
 
 TIME & SPACE COMPLEXITY:
 
-Time Complexity: O(n)
-Space Complexity: O(n)
+Time Complexity: O (n)
+Space Complexity: O (n)
 
 COMPILATION & EXECUTION:
 
