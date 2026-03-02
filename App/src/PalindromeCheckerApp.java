@@ -56,7 +56,7 @@ public class PalindromeCheckerApp {
      */
     public static void main(String[] args) {
 
-        String input = "Racecar";
+        String input = " Racecar ";
 
         // Create service object
         PalindromeChecker checker = new PalindromeChecker();
