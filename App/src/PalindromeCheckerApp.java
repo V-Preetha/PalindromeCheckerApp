@@ -1,51 +1,71 @@
-import java.util.LinkedList;
-
 /**
  * ============================================================
- * MAIN CLASS - UseCase8PalindromeCheckerApp
+ * MAIN CLASS - UseCase11PalindromeCheckerApp
  * ============================================================
  *
- * Use Case 8: Linked List Based Palindrome Checker
+ * Use Case 11: Object-Oriented Palindrome Service
  *
- * Validates palindrome using LinkedList by comparing
- * elements from both ends.
+ * Demonstrates palindrome validation using
+ * encapsulation and object-oriented principles.
  */
 
+/*------------------------------------------------------------
+   Palindrome Service Class
+------------------------------------------------------------*/
+class PalindromeChecker {
+
+    /**
+     * Checks whether given string is palindrome
+     * @param input String to validate
+     * @return true if palindrome
+     */
+    public boolean checkPalindrome(String input) {
+
+        // Normalize input
+        String normalized = input
+                .replaceAll("[^a-zA-Z0-9]", "")
+                .toLowerCase();
+
+        int start = 0;
+        int end = normalized.length() - 1;
+
+        // Compare characters
+        while (start < end) {
+
+            if (normalized.charAt(start)
+                    != normalized.charAt(end)) {
+                return false;
+            }
+
+            start++;
+            end--;
+        }
+
+        return true;
+    }
+}
+
+
+/*------------------------------------------------------------
+   Application Class
+------------------------------------------------------------*/
 public class PalindromeCheckerApp {
 
     /**
-     * Application entry point for UC8
+     * Application entry point for UC11
      */
     public static void main(String[] args) {
 
-        // Define input string
-        String input = "level";
+        String input = "Racecar";
 
-        // Create LinkedList
-        LinkedList<Character> list = new LinkedList<>();
+        // Create service object
+        PalindromeChecker checker = new PalindromeChecker();
 
-        // Add characters to LinkedList
-        for (char c : input.toCharArray()) {
-            list.add(c);
-        }
-
-        // Flag to track palindrome state
-        boolean isPalindrome = true;
-
-        // Compare first and last elements
-        while (list.size() > 1) {
-
-            char first = list.removeFirst();
-            char last  = list.removeLast();
-
-            if (first != last) {
-                isPalindrome = false;
-                break;
-            }
-        }
+        // Invoke service method
+        boolean result = checker.checkPalindrome(input);
 
         // Display result
         System.out.println("Input : " + input);
-        System.out.println("Is Palindrome? : " + isPalindrome);
+        System.out.println("Is Palindrome? : " + result);
     }
 }

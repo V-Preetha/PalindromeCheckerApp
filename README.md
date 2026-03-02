@@ -1,53 +1,52 @@
 ============================================================
 PalindromeCheckerApp
-USE CASE 8: Linked List Based Palindrome Checker
+USE CASE 11: Object-Oriented Palindrome Service
 ============================================================
 
 OBJECTIVE:
-To validate whether a given string is a palindrome using a
-LinkedList data structure by comparing elements from both ends.
+To validate whether a given string is a palindrome using
+Object-Oriented Programming principles by encapsulating
+the validation logic inside a dedicated service class.
 
 GOAL:
-Insert characters into LinkedList  
-Remove first and last elements  
-Compare both characters  
-Print palindrome validation result
+Create PalindromeChecker class  
+Encapsulate palindrome logic  
+Expose checkPalindrome() method  
+Invoke service through object creation
 
 IMPLEMENTATION APPROACH:
 
-Store predefined input string.
-Create a LinkedList object.
-Insert each character into the list.
-Remove characters using removeFirst().
-Remove characters using removeLast().
-Compare both characters simultaneously.
-Stop execution if mismatch occurs.
-Display final palindrome result.
+Create PalindromeChecker service class.
+Implement checkPalindrome() method.
+Normalize input string.
+Compare characters from both ends.
+Return validation result.
+Call service from main application class.
+Display palindrome result.
 
 FLOW OF EXECUTION:
 
-Program starts → Input string stored → LinkedList created →
-Characters inserted → First and last elements removed →
-Characters compared → Boolean result determined →
+Program starts → Input string stored →
+PalindromeChecker object created →
+checkPalindrome() method invoked →
+String normalized →
+Characters compared →
+Boolean result returned →
 Output displayed → Program exits
 
 KEY CONCEPTS USED:
 
-LinkedList (java.util.LinkedList)
-Dynamic linear data structure supporting efficient
-insertion and deletion operations.
+Encapsulation
+Palindrome logic hidden inside service class.
 
-removeFirst() Operation
-Retrieves element from the beginning of the list.
+Single Responsibility Principle
+Class handles only palindrome validation.
 
-removeLast() Operation
-Retrieves element from the end of the list.
+Object-Oriented Design
+Logic separated from application execution.
 
-Bidirectional Comparison
-Allows symmetric palindrome validation.
-
-Data Structure Utilization
-Demonstrates double-ended operations using LinkedList.
+Method Abstraction
+Public method exposes validation behavior.
 
 TIME & SPACE COMPLEXITY:
 
@@ -56,8 +55,8 @@ Space Complexity: O(n)
 
 COMPILATION & EXECUTION:
 
-javac UseCase8PalindromeCheckerApp.java
-java UseCase8PalindromeCheckerApp
+javac UseCase11PalindromeCheckerApp.java
+java UseCase11PalindromeCheckerApp
 
 VERSION:
-UC8 – LinkedList-Based Validation Version 8.0
+UC11 – Object-Oriented Validation Version 11.0
