@@ -1,84 +1,62 @@
 ============================================================
 PalindromeCheckerApp
+USE CASE 6: Queue + Stack Based Palindrome Checker
 ============================================================
 
-USE CASE 5:
-Stack-Based Palindrome Checker
-
 OBJECTIVE:
-To validate whether a given string is a palindrome by
-using a Stack data structure to reverse characters
-based on LIFO (Last In First Out) principle.
-
-------------------------------------------------------------
+To validate whether a given string is a palindrome using both
+Queue and Stack data structures demonstrating FIFO and LIFO behavior.
 
 GOAL:
-Push characters into stack
-Pop characters in reverse order
-Compare with original string
-Print validation result
-
-------------------------------------------------------------
+Enqueue characters into Queue  
+Push characters into Stack  
+Compare dequeue and pop results  
+Print palindrome validation result  
 
 IMPLEMENTATION APPROACH:
 
-- Store predefined string.
-- Create a Stack<Character> object.
-- Push each character of the string into the stack.
-- Pop characters one by one.
-- Compare popped character with original string.
-- Stop immediately if mismatch occurs.
-- Display final result.
-
-------------------------------------------------------------
+Store predefined input string.
+Create Queue and Stack objects.
+Insert each character into both structures.
+Remove characters using dequeue (Queue).
+Remove characters using pop (Stack).
+Compare both outputs simultaneously.
+Stop execution if mismatch occurs.
+Display final palindrome result.
 
 FLOW OF EXECUTION:
 
-Program starts
-→ Hardcoded string is stored
-→ Stack is created
-→ Characters pushed into stack
-→ Characters popped in reverse order
-→ Compared with original string
-→ Boolean result determined
-→ Output displayed
-→ Program exits
-
-------------------------------------------------------------
+Program starts → Input string stored → Queue & Stack created →
+Characters inserted → Queue dequeues from front →
+Stack pops from rear → Characters compared →
+Boolean result determined → Output displayed → Program exits
 
 KEY CONCEPTS USED:
 
-1. Stack (java.util.Stack)
-   Linear data structure following LIFO principle.
+Queue (java.util.Queue / LinkedList)
+Linear data structure following FIFO principle.
 
-2. Push Operation
-   Adds elements to the top of the stack.
+Stack (java.util.Stack)
+Linear data structure following LIFO principle.
 
-3. Pop Operation
-   Removes elements from the top (reverse order retrieval).
+Enqueue & Dequeue Operations
+Maintain insertion-order processing.
 
-4. Reversal Logic
-   Stack automatically reverses insertion order.
+Push & Pop Operations
+Provide reverse-order retrieval.
 
-5. Data Structure Utilization
-   Demonstrates structured approach instead of index-based logic.
-
-------------------------------------------------------------
+Symmetric Comparison
+Combines FIFO and LIFO behaviors for palindrome validation.
 
 TIME & SPACE COMPLEXITY:
 
 Time Complexity: O(n)
-Space Complexity: O(n)  (extra stack storage)
-
-------------------------------------------------------------
+Space Complexity: O(n)
 
 COMPILATION & EXECUTION:
 
 javac PalindromeCheckerApp.java
 java PalindromeCheckerApp
 
-------------------------------------------------------------
-
 VERSION:
-UC5 – Stack-Based Validation
-Version 5.0
+UC6 – Queue + Stack Validation Version 6.0
