@@ -55,8 +55,8 @@ Space Complexity: O(n)
 
 COMPILATION & EXECUTION:
 
-javac UseCase11PalindromeCheckerApp.java
-java UseCase11PalindromeCheckerApp
+javac App/src/PalindromeCheckerApp.java
+java -cp App/src PalindromeCheckerApp
 
 VERSION:
 UC11 – Object-Oriented Validation Version 11.0
