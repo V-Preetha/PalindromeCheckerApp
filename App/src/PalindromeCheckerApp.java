@@ -1,46 +1,71 @@
 /**
  * ============================================================
- * MAIN CLASS - UseCase10PalindromeCheckerApp
+ * MAIN CLASS - UseCase11PalindromeCheckerApp
  * ============================================================
  *
- * Use Case 10: Normalized Palindrome Validation
+ * Use Case 11: Object-Oriented Palindrome Service
  *
- * Validates palindrome after preprocessing input string.
- * Normalization removes spaces/symbols and converts
- * characters to lowercase.
+ * Demonstrates palindrome validation using
+ * encapsulation and object-oriented principles.
  */
 
-public class PalindromeCheckerApp {
+/*------------------------------------------------------------
+   Palindrome Service Class
+------------------------------------------------------------*/
+class PalindromeChecker {
 
     /**
-     * Application entry point for UC10
+     * Checks whether given string is palindrome
+     * @param input String to validate
+     * @return true if palindrome
      */
-    public static void main(String[] args) {
+    public boolean checkPalindrome(String input) {
 
-        // Define input string
-        String input = "A man a plan a canal Panama";
-
-        // Normalize string:
-        // remove non-alphanumeric characters & convert to lowercase
+        // Normalize input
         String normalized = input
                 .replaceAll("[^a-zA-Z0-9]", "")
                 .toLowerCase();
 
-        boolean isPalindrome = true;
+        int start = 0;
+        int end = normalized.length() - 1;
 
-        // Compare characters from both ends
-        for (int i = 0; i < normalized.length() / 2; i++) {
+        // Compare characters
+        while (start < end) {
 
-            if (normalized.charAt(i) !=
-                    normalized.charAt(normalized.length() - 1 - i)) {
-
-                isPalindrome = false;
-                break;
+            if (normalized.charAt(start)
+                    != normalized.charAt(end)) {
+                return false;
             }
+
+            start++;
+            end--;
         }
+
+        return true;
+    }
+}
+
+
+/*------------------------------------------------------------
+   Application Class
+------------------------------------------------------------*/
+public class PalindromeCheckerApp {
+
+    /**
+     * Application entry point for UC11
+     */
+    public static void main(String[] args) {
+
+        String input = "Racecar";
+
+        // Create service object
+        PalindromeChecker checker = new PalindromeChecker();
+
+        // Invoke service method
+        boolean result = checker.checkPalindrome(input);
 
         // Display result
         System.out.println("Input : " + input);
-        System.out.println("Is Palindrome? : " + isPalindrome);
+        System.out.println("Is Palindrome? : " + result);
     }
 }

@@ -1,53 +1,52 @@
 ============================================================
 PalindromeCheckerApp
-USE CASE 10: Normalized Palindrome Validation
+USE CASE 11: Object-Oriented Palindrome Service
 ============================================================
 
 OBJECTIVE:
-To validate whether a given string is a palindrome by
-ignoring spaces, symbols, and character case through
-string normalization.
+To validate whether a given string is a palindrome using
+Object-Oriented Programming principles by encapsulating
+the validation logic inside a dedicated service class.
 
 GOAL:
-Normalize input string  
-Remove spaces and special characters  
-Convert characters to lowercase  
-Compare symmetric characters  
-Print palindrome validation result
+Create PalindromeChecker class  
+Encapsulate palindrome logic  
+Expose checkPalindrome() method  
+Invoke service through object creation
 
 IMPLEMENTATION APPROACH:
 
-Store predefined input string.
-Normalize string using preprocessing.
-Remove non-alphanumeric characters.
-Convert entire string to lowercase.
+Create PalindromeChecker service class.
+Implement checkPalindrome() method.
+Normalize input string.
 Compare characters from both ends.
-Stop execution if mismatch occurs.
-Display final palindrome result.
+Return validation result.
+Call service from main application class.
+Display palindrome result.
 
 FLOW OF EXECUTION:
 
 Program starts → Input string stored →
+PalindromeChecker object created →
+checkPalindrome() method invoked →
 String normalized →
-Spaces and symbols removed →
-Converted to lowercase →
-Characters compared symmetrically →
-Boolean result determined →
+Characters compared →
+Boolean result returned →
 Output displayed → Program exits
 
 KEY CONCEPTS USED:
 
-String Preprocessing
-Transforms input before logical validation.
+Encapsulation
+Palindrome logic hidden inside service class.
 
-Regular Expressions (Regex)
-Used to remove unwanted characters.
+Single Responsibility Principle
+Class handles only palindrome validation.
 
-Case Normalization
-Ensures case-insensitive comparison.
+Object-Oriented Design
+Logic separated from application execution.
 
-Symmetric Character Comparison
-Validates palindrome logically rather than format-wise.
+Method Abstraction
+Public method exposes validation behavior.
 
 TIME & SPACE COMPLEXITY:
 
@@ -56,8 +55,8 @@ Space Complexity: O(n)
 
 COMPILATION & EXECUTION:
 
-javac UseCase10PalindromeCheckerApp.java
-java UseCase10PalindromeCheckerApp
+javac PalindromeCheckerApp.java
+java PalindromeCheckerApp
 
 VERSION:
-UC10 – Normalized Validation Version 10.0
+UC11 – Object-Oriented Validation Version 11.0
