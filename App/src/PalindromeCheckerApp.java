@@ -1,44 +1,46 @@
 /**
  * ============================================================
- * MAIN CLASS - UseCase11PalindromeCheckerApp
+ * MAIN CLASS - UseCase12PalindromeCheckerApp
  * ============================================================
  *
- * Use Case 11: Object-Oriented Palindrome Service
+ * Use Case 12: Strategy Pattern for Palindrome Algorithms
  *
- * Demonstrates palindrome validation using
- * encapsulation and object-oriented principles.
+ * Demonstrates dynamic selection of palindrome
+ * validation algorithms using Strategy Design Pattern.
  */
 
-/*------------------------------------------------------------
-   Palindrome Service Class
-------------------------------------------------------------*/
-class PalindromeChecker {
+
+/*============================================================
+    INTERFACE - PalindromeStrategy
+============================================================*/
+interface PalindromeStrategy {
+
+    boolean check(String input);
+}
+
+
+/*============================================================
+    CLASS - StackStrategy
+============================================================*/
+class StackStrategy implements PalindromeStrategy {
 
     /**
-     * Checks whether given string is palindrome
-     * @param input String to validate
-     * @return true if palindrome
+     * Implements palindrome validation using Stack
      */
-    public boolean checkPalindrome(String input) {
+    public boolean check(String input) {
 
-        // Normalize input
-        String normalized = input
-                .replaceAll("[^a-zA-Z0-9]", "")
-                .toLowerCase();
+        java.util.Stack<Character> stack = new java.util.Stack<>();
 
-        int start = 0;
-        int end = normalized.length() - 1;
+        // Push characters into stack
+        for (char c : input.toCharArray()) {
+            stack.push(c);
+        }
 
-        // Compare characters
-        while (start < end) {
-
-            if (normalized.charAt(start)
-                    != normalized.charAt(end)) {
+        // Compare with original string
+        for (char c : input.toCharArray()) {
+            if (c != stack.pop()) {
                 return false;
             }
-
-            start++;
-            end--;
         }
 
         return true;
@@ -46,25 +48,41 @@ class PalindromeChecker {
 }
 
 
-/*------------------------------------------------------------
-   Application Class
-------------------------------------------------------------*/
-public class PalindromeCheckerApp {
+/*============================================================
+    CONTEXT CLASS
+============================================================*/
+class PalindromeContext {
 
-    /**
-     * Application entry point for UC11
-     */
+    private PalindromeStrategy strategy;
+
+    // Inject strategy at runtime
+    public void setStrategy(PalindromeStrategy strategy) {
+        this.strategy = strategy;
+    }
+
+    public boolean execute(String input) {
+        return strategy.check(input);
+    }
+}
+
+
+/*============================================================
+    APPLICATION CLASS
+============================================================*/
+public class UseCase12PalindromeCheckerApp {
+
     public static void main(String[] args) {
 
-        String input = " Racecar ";
+        String input = "level";
 
-        // Create service object
-        PalindromeChecker checker = new PalindromeChecker();
+        // Create context
+        PalindromeContext context = new PalindromeContext();
 
-        // Invoke service method
-        boolean result = checker.checkPalindrome(input);
+        // Inject Stack strategy dynamically
+        context.setStrategy(new StackStrategy());
 
-        // Display result
+        boolean result = context.execute(input);
+
         System.out.println("Input : " + input);
         System.out.println("Is Palindrome? : " + result);
     }

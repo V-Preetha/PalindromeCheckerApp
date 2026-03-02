@@ -1,62 +1,58 @@
 ============================================================
 PalindromeCheckerApp
-USE CASE 11: Object-Oriented Palindrome Service
+USE CASE 12: Strategy Pattern for Palindrome Algorithms
 ============================================================
 
 OBJECTIVE:
-To validate whether a given string is a palindrome using
-Object-Oriented Programming principles by encapsulating
-the validation logic inside a dedicated service class.
+To validate a palindrome using dynamically selectable
+algorithms implemented through the Strategy Design Pattern.
 
 GOAL:
-Create PalindromeChecker class  
-Encapsulate palindrome logic  
-Expose checkPalindrome() method  
-Invoke service through object creation
+Define PalindromeStrategy interface  
+Implement Stack-based strategy  
+Inject algorithm at runtime  
+Execute selected palindrome validation
 
 IMPLEMENTATION APPROACH:
 
-Create PalindromeChecker service class.
-Implement checkPalindrome() method.
-Normalize input string.
-Compare characters from both ends.
-Return validation result.
-Call service from main application class.
-Display palindrome result.
+Create PalindromeStrategy interface.
+Implement StackStrategy class.
+Create Context class to hold strategy.
+Inject strategy dynamically at runtime.
+Execute palindrome validation through context.
 
 FLOW OF EXECUTION:
 
 Program starts → Input string stored →
-PalindromeChecker object created →
-checkPalindrome() method invoked →
-String normalized →
-Characters compared →
+Strategy object created →
+Strategy injected into context →
+Selected algorithm executed →
 Boolean result returned →
 Output displayed → Program exits
 
 KEY CONCEPTS USED:
 
+Interface
+Defines contract for interchangeable algorithms.
+
+Polymorphism
+Different strategies share common behavior.
+
+Strategy Pattern
+Allows runtime algorithm selection.
+
 Encapsulation
-Palindrome logic hidden inside service class.
-
-Single Responsibility Principle
-Class handles only palindrome validation.
-
-Object-Oriented Design
-Logic separated from application execution.
-
-Method Abstraction
-Public method exposes validation behavior.
+Algorithm logic separated into independent classes.
 
 TIME & SPACE COMPLEXITY:
 
-Time Complexity: O (n)
-Space Complexity: O (n)
+Time Complexity: O(n)
+Space Complexity: O(n)
 
 COMPILATION & EXECUTION:
 
-javac PalindromeCheckerApp.java
-java PalindromeCheckerApp
+javac UseCase12PalindromeCheckerApp.java
+java UseCase12PalindromeCheckerApp
 
 VERSION:
-UC11 – Object-Oriented Validation Version 11.0
+UC12 – Strategy Pattern Validation Version 12.0
