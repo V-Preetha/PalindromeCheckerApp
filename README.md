@@ -1,63 +1,62 @@
 ============================================================
 PalindromeCheckerApp
-USE CASE 8: Linked List Based Palindrome Checker
+USE CASE 9: Recursive Palindrome Checker
 ============================================================
 
 OBJECTIVE:
-To validate whether a given string is a palindrome using a
-LinkedList data structure by comparing elements from both ends.
+To validate whether a given string is a palindrome using
+recursion by comparing characters from outer positions
+moving toward the center.
 
 GOAL:
-Insert characters into LinkedList  
-Remove first and last elements  
-Compare both characters  
+Compare first and last characters recursively  
+Move indices inward using recursive calls  
+Terminate using base condition  
 Print palindrome validation result
 
 IMPLEMENTATION APPROACH:
 
 Store predefined input string.
-Create a LinkedList object.
-Insert each character into the list.
-Remove characters using removeFirst().
-Remove characters using removeLast().
-Compare both characters simultaneously.
-Stop execution if mismatch occurs.
+Call recursive method with start and end indices.
+Compare characters at both ends.
+Return false immediately if mismatch occurs.
+Continue recursive comparison inward.
+Stop recursion when indices meet or cross.
 Display final palindrome result.
 
 FLOW OF EXECUTION:
 
-Program starts → Input string stored → LinkedList created →
-Characters inserted → First and last elements removed →
-Characters compared → Boolean result determined →
+Program starts → Input string stored →
+Recursive method invoked →
+Outer characters compared →
+Recursive calls move inward →
+Base condition reached →
+Boolean result determined →
 Output displayed → Program exits
 
 KEY CONCEPTS USED:
 
-LinkedList (java.util.LinkedList)
-Dynamic linear data structure supporting efficient
-insertion and deletion operations.
+Recursion
+Method calls itself to solve smaller subproblems.
 
-removeFirst() Operation
-Retrieves element from the beginning of the list.
+Base Condition
+Stops recursion to prevent infinite execution.
 
-removeLast() Operation
-Retrieves element from the end of the list.
+Call Stack
+Stores recursive function calls automatically.
 
-Bidirectional Comparison
-Allows symmetric palindrome validation.
-
-Data Structure Utilization
-Demonstrates double-ended operations using LinkedList.
+Divide and Conquer Logic
+Breaks palindrome validation into smaller comparisons.
 
 TIME & SPACE COMPLEXITY:
 
 Time Complexity: O(n)
-Space Complexity: O(n)
+Space Complexity: O(n) (recursive call stack)
 
 COMPILATION & EXECUTION:
 
-javac UseCase8PalindromeCheckerApp.java
-java UseCase8PalindromeCheckerApp
+javac UseCase9PalindromeCheckerApp.java
+java UseCase9PalindromeCheckerApp
 
 VERSION:
-UC8 – LinkedList-Based Validation Version 8.0
+UC9 – Recursive Validation Version 9.0
