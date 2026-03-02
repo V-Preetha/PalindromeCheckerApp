@@ -1,58 +1,56 @@
 ============================================================
 PalindromeCheckerApp
-USE CASE 12: Strategy Pattern for Palindrome Algorithms
+USE CASE 13: Performance Comparison
 ============================================================
 
 OBJECTIVE:
-To validate a palindrome using dynamically selectable
-algorithms implemented through the Strategy Design Pattern.
+To compare execution performance of different palindrome
+validation algorithms using runtime measurement.
 
 GOAL:
-Define PalindromeStrategy interface  
-Implement Stack-based strategy  
-Inject algorithm at runtime  
-Execute selected palindrome validation
+Execute multiple palindrome algorithms
+Measure execution time
+Display performance comparison results
 
 IMPLEMENTATION APPROACH:
 
-Create PalindromeStrategy interface.
-Implement StackStrategy class.
-Create Context class to hold strategy.
-Inject strategy dynamically at runtime.
-Execute palindrome validation through context.
+Normalize input string.
+Execute Stack-based palindrome check.
+Execute Deque-based palindrome check.
+Execute Direct comparison approach.
+Capture execution time using System.nanoTime().
+Display validation result with execution duration.
 
 FLOW OF EXECUTION:
 
-Program starts → Input string stored →
-Strategy object created →
-Strategy injected into context →
-Selected algorithm executed →
-Boolean result returned →
-Output displayed → Program exits
+Program starts → Input normalized →
+Algorithm 1 executed →
+Execution time captured →
+Algorithm 2 executed →
+Execution time captured →
+Algorithm 3 executed →
+Results displayed → Program exits
 
 KEY CONCEPTS USED:
 
-Interface
-Defines contract for interchangeable algorithms.
+System.nanoTime()
+Provides high-resolution execution timing.
 
-Polymorphism
-Different strategies share common behavior.
+Algorithm Comparison
+Evaluates efficiency of different approaches.
 
-Strategy Pattern
-Allows runtime algorithm selection.
+Performance Analysis
+Helps identify optimal algorithm.
 
-Encapsulation
-Algorithm logic separated into independent classes.
+TIME COMPLEXITY:
 
-TIME & SPACE COMPLEXITY:
-
-Time Complexity: O(n)
-Space Complexity: O(n)
+All Methods: O(n)
+Performance differs due to overhead.
 
 COMPILATION & EXECUTION:
 
-javac UseCase12PalindromeCheckerApp.java
-java UseCase12PalindromeCheckerApp
+javac UseCase13PalindromeCheckerApp.java
+java UseCase13PalindromeCheckerApp
 
 VERSION:
-UC12 – Strategy Pattern Validation Version 12.0
+UC13 – Performance Comparison Version 13.0
