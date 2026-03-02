@@ -1,62 +1,63 @@
 ============================================================
 PalindromeCheckerApp
-USE CASE 9: Recursive Palindrome Checker
+USE CASE 10: Normalized Palindrome Validation
 ============================================================
 
 OBJECTIVE:
-To validate whether a given string is a palindrome using
-recursion by comparing characters from outer positions
-moving toward the center.
+To validate whether a given string is a palindrome by
+ignoring spaces, symbols, and character case through
+string normalization.
 
 GOAL:
-Compare first and last characters recursively  
-Move indices inward using recursive calls  
-Terminate using base condition  
+Normalize input string  
+Remove spaces and special characters  
+Convert characters to lowercase  
+Compare symmetric characters  
 Print palindrome validation result
 
 IMPLEMENTATION APPROACH:
 
 Store predefined input string.
-Call recursive method with start and end indices.
-Compare characters at both ends.
-Return false immediately if mismatch occurs.
-Continue recursive comparison inward.
-Stop recursion when indices meet or cross.
+Normalize string using preprocessing.
+Remove non-alphanumeric characters.
+Convert entire string to lowercase.
+Compare characters from both ends.
+Stop execution if mismatch occurs.
 Display final palindrome result.
 
 FLOW OF EXECUTION:
 
 Program starts → Input string stored →
-Recursive method invoked →
-Outer characters compared →
-Recursive calls move inward →
-Base condition reached →
+String normalized →
+Spaces and symbols removed →
+Converted to lowercase →
+Characters compared symmetrically →
 Boolean result determined →
 Output displayed → Program exits
 
 KEY CONCEPTS USED:
 
-Recursion
-Method calls itself to solve smaller subproblems.
+String Preprocessing
+Transforms input before logical validation.
 
-Base Condition
-Stops recursion to prevent infinite execution.
+Regular Expressions (Regex)
+Used to remove unwanted characters.
 
-Call Stack
-Stores recursive function calls automatically.
+Case Normalization
+Ensures case-insensitive comparison.
 
-Divide and Conquer Logic
-Breaks palindrome validation into smaller comparisons.
+Symmetric Character Comparison
+Validates palindrome logically rather than format-wise.
 
 TIME & SPACE COMPLEXITY:
 
 Time Complexity: O(n)
-Space Complexity: O(n) (recursive call stack)
+Space Complexity: O(n)
 
 COMPILATION & EXECUTION:
 
-javac UseCase9PalindromeCheckerApp.java
-java UseCase9PalindromeCheckerApp
+javac UseCase10PalindromeCheckerApp.java
+java UseCase10PalindromeCheckerApp
 
 VERSION:
-UC9 – Recursive Validation Version 9.0
+UC10 – Normalized Validation Version 10.0
