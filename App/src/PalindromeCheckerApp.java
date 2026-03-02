@@ -1,89 +1,110 @@
 /**
  * ============================================================
- * MAIN CLASS - UseCase12PalindromeCheckerApp
+ * MAIN CLASS - UseCase13PalindromeCheckerApp
  * ============================================================
  *
- * Use Case 12: Strategy Pattern for Palindrome Algorithms
+ * Use Case 13: Performance Comparison
  *
- * Demonstrates dynamic selection of palindrome
- * validation algorithms using Strategy Design Pattern.
+ * Compares execution time of different
+ * palindrome validation approaches.
  */
 
+import java.util.Stack;
+import java.util.ArrayDeque;
+import java.util.Deque;
 
-/*============================================================
-    INTERFACE - PalindromeStrategy
-============================================================*/
-interface PalindromeStrategy {
+public class PalindromeCheckerApp {
 
-    boolean check(String input);
-}
+    public static void main(String[] args) {
+
+        String input = "A man a plan a canal Panama"
+                .replaceAll("[^a-zA-Z0-9]", "")
+                .toLowerCase();
+
+        System.out.println("Input : " + input);
+        System.out.println("\n--- Performance Comparison ---");
+
+        // Stack Method
+        long start = System.nanoTime();
+        boolean stackResult = stackCheck(input);
+        long end = System.nanoTime();
+        System.out.println("Stack Method      : "
+                + stackResult + " | Time = "
+                + (end - start) + " ns");
+
+        // Deque Method
+        start = System.nanoTime();
+        boolean dequeResult = dequeCheck(input);
+        end = System.nanoTime();
+        System.out.println("Deque Method      : "
+                + dequeResult + " | Time = "
+                + (end - start) + " ns");
+
+        // Direct Comparison Method
+        start = System.nanoTime();
+        boolean directResult = directCheck(input);
+        end = System.nanoTime();
+        System.out.println("Direct Comparison : "
+                + directResult + " | Time = "
+                + (end - start) + " ns");
+    }
 
 
-/*============================================================
-    CLASS - StackStrategy
-============================================================*/
-class StackStrategy implements PalindromeStrategy {
+    /*==========================================================
+        STACK APPROACH
+    ==========================================================*/
+    public static boolean stackCheck(String input) {
 
-    /**
-     * Implements palindrome validation using Stack
-     */
-    public boolean check(String input) {
+        Stack<Character> stack = new Stack<>();
 
-        java.util.Stack<Character> stack = new java.util.Stack<>();
-
-        // Push characters into stack
         for (char c : input.toCharArray()) {
             stack.push(c);
         }
 
-        // Compare with original string
         for (char c : input.toCharArray()) {
-            if (c != stack.pop()) {
+            if (c != stack.pop())
                 return false;
-            }
         }
-
         return true;
     }
-}
 
 
-/*============================================================
-    CONTEXT CLASS
-============================================================*/
-class PalindromeContext {
+    /*==========================================================
+        DEQUE APPROACH
+    ==========================================================*/
+    public static boolean dequeCheck(String input) {
 
-    private PalindromeStrategy strategy;
+        Deque<Character> deque = new ArrayDeque<>();
 
-    // Inject strategy at runtime
-    public void setStrategy(PalindromeStrategy strategy) {
-        this.strategy = strategy;
+        for (char c : input.toCharArray()) {
+            deque.addLast(c);
+        }
+
+        while (deque.size() > 1) {
+            if (!deque.removeFirst()
+                    .equals(deque.removeLast()))
+                return false;
+        }
+        return true;
     }
 
-    public boolean execute(String input) {
-        return strategy.check(input);
-    }
-}
 
+    /*==========================================================
+        DIRECT TWO-POINTER APPROACH
+    ==========================================================*/
+    public static boolean directCheck(String input) {
 
-/*============================================================
-    APPLICATION CLASS
-============================================================*/
-public class UseCase12PalindromeCheckerApp {
+        int start = 0;
+        int end = input.length() - 1;
 
-    public static void main(String[] args) {
+        while (start < end) {
+            if (input.charAt(start)
+                    != input.charAt(end))
+                return false;
 
-        String input = "level";
-
-        // Create context
-        PalindromeContext context = new PalindromeContext();
-
-        // Inject Stack strategy dynamically
-        context.setStrategy(new StackStrategy());
-
-        boolean result = context.execute(input);
-
-        System.out.println("Input : " + input);
-        System.out.println("Is Palindrome? : " + result);
+            start++;
+            end--;
+        }
+        return true;
     }
 }
